@@ -45,8 +45,10 @@ group :test do
   gem 'guard-rspec'
 end
 
+gem 'annotate'
+
 # Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.1.2'
+gem 'bcrypt'
 
 # Use unicorn as the app server
 # gem 'unicorn'
