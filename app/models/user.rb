@@ -16,16 +16,16 @@
 class User < ActiveRecord::Base
   attr_reader :password
 
-  validates :username, :session_token, :uniqueness => true
-  validates :username, :session_token, :password_digest, :first_name, :last_name, :presence => true
+  validates :email, :session_token, :uniqueness => true
+  validates :email, :session_token, :password_digest, :first_name, :last_name, :presence => true
   validates :password, :length => {:minimum => 6, :allow_nil => true}
-  validates :username, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create}
+  validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create}
   before_validation :ensure_session_token
 
   #associations
 
-  def self.find_by_credentials(username,password)
-    user = User.find_by({username: username})
+  def self.find_by_credentials(email,password)
+    user = User.find_by({email: email})
     user.try(:is_password?, password) ? user : nil
   end
 

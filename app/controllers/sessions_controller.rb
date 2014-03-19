@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
 
   def create
     @user = User.find_by_credentials(
-      user_params[:username],
+      user_params[:email],
       user_params[:password]
     )
 
@@ -28,6 +28,6 @@ class SessionsController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :password)
+    params.require(:user).permit(:email, :password)
   end
 end
