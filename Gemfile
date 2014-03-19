@@ -37,6 +37,14 @@ group :development do
   gem 'binding_of_caller'
 end
 
+group :development, :test do
+  gem 'rspec-rails'
+end
+
+group :test do
+  gem 'guard-rspec'
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
