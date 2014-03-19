@@ -1,28 +1,10 @@
-== README
+== Pintriguing
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The goal of this project is to clone Pinterest, using Ruby on Rails, Javascript, JQuery, Backbone, Bootstrap, HTML and CSS.
 
-Things you may want to cover:
+There a few core features:
 
-* Ruby version
+* Users can create boards from pins, which they can add either from the site, a url, or an uploaded image.
 
-* System dependencies
+* Users can browse boards by interest tags, or view their home board which has a random compilation of their favorited tags.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
