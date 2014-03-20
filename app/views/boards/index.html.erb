@@ -1,10 +1,10 @@
 <h1>Boards</h1>
 <% @boards.each do |board| %>
-<h3><%= board.name %></h3>
+<h3><%=link_to board.name, user_board_url(current_user.id,board) %></h3>
 <ul>
   <% board.pins.each do |pin| %>
 
-    <li><%= pin.title %></li>
+    <li><%= link_to pin.title, pin_url(pin) %></li>
 
   <% end %>
 

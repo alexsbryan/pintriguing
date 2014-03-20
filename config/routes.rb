@@ -7,4 +7,6 @@ Pintriguing::Application.routes.draw do
   end
 
   resources :pins
+
+  resources :categories, :only =>[:show]
 end
