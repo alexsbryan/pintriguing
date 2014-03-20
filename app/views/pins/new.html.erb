@@ -1,0 +1,30 @@
+<h1>Create a pin</h1>
+
+<form action="<%= pins_url %>" method="post">
+  <input
+      name="authenticity_token"
+      type="hidden"
+      value="<%= form_authenticity_token %>">
+
+  <label>Title
+      <input type='text' name="pin[title]" value='<%= @pin.title %>'>
+  </label>
+
+  <label>URL
+      <input type='text' name="pin[url]" value='<%= @pin.title %>'>
+  </label>
+
+  <label>Board
+    <select name='board[id]'>
+      <option>
+      <% @boards.each do |board| %>
+      <option value='<%= board.id %>'>
+        <%= board.name %>
+        </option>
+      <% end %>
+    </select>
+  </label>
+
+
+  <p><input type="submit" value="Submit"></p>
+</form>

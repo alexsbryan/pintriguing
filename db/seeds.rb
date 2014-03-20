@@ -27,6 +27,7 @@ uncouthPin = Pin.create(id: 102, title: 'Uncouth Pin', url: 'www.lake.url')
 pinAssign1 = BoardAssignment.create(board_id: 100, pin_id: 100)
 pinAssign2 = BoardAssignment.create(board_id: 101, pin_id: 101)
 pinAssign3 = BoardAssignment.create(board_id: 102, pin_id: 102)
+pinAssign4 = BoardAssignment.create(board_id: 101, pin_id: 102)
 
 coolCategory = Category.create(id: 100, title: 'Cool')
 uncoolCategory = Category.create(id: 101, title: 'unCool')

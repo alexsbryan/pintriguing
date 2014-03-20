@@ -1,0 +1,12 @@
+<h1><%= @pin.title %></h1>
+  <% if !(boards =  @pin.boards.where(owner_id:current_user.id)).empty? %>
+    <p><%= boards.first.name %></p>
+  <% end %>
+  <% if (b=@pin.boards).length >1 %>
+    <h2>Also found on these boards: </h2>
+    <% b.each do |board| %>
+      <% if board.owner_id != current_user.id %>
+        <p><%= board.name %></p>
+      <% end %>
+    <% end %>
+<% end %>

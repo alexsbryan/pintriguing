@@ -5,4 +5,6 @@ Pintriguing::Application.routes.draw do
   resources :users, :only=>[:index,:show] do
     resources :boards
   end
+
+  resources :pins
 end
