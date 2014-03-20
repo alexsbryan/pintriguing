@@ -13,6 +13,6 @@ class Category < ActiveRecord::Base
   :category_assignments,
   :foreign_key => :cat_id
   )
-  has_many :boards, :through => :category_assignments, :source => :board
+  has_many :boards, :through => :category_assignments, :source => :board, :inverse_of=> :categories
 
 end
