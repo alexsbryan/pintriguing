@@ -10,4 +10,7 @@
 #
 
 class Pin < ActiveRecord::Base
+  has_many :board_assignments
+  has_many :boards, :through => :board_assignments, :source => :board
+  has_many :owners, :through => :boards, :source => :owner
 end

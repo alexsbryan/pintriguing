@@ -9,4 +9,10 @@
 #
 
 class Category < ActiveRecord::Base
+  has_many(
+  :category_assignments,
+  :foreign_key => :cat_id
+  )
+  has_many :boards, :through => :category_assignments, :source => :board
+
 end

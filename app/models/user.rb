@@ -23,6 +23,17 @@ class User < ActiveRecord::Base
   before_validation :ensure_session_token
 
   #associations
+  has_many(
+  :boards,
+  :class_name => "Board",
+  :foreign_key => :owner_id,
+  )
+
+  ##has_many :categories
+  has_many :categories, :through => :boards, :source => :categories
+  ##has_many :pins
+  has_many :pins, :through => :boards, :source => :pins
+
 
   def self.find_by_credentials(email,password)
     user = User.find_by({email: email})
