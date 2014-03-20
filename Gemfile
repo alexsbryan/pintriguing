@@ -47,6 +47,8 @@ end
 
 gem 'annotate'
 
+gem 'devise'
+
 # Use ActiveModel has_secure_password
 gem 'bcrypt'
 
