@@ -1,3 +1,50 @@
-<h1><%= @board.name %></h1>
-<h2>Category</h2>
-<p><%= @board.categories.first.title %></p>
+<div class='row'>
+  <div class='col-xs-12'>
+    <h1><%= @board.name %></h1>
+    <h2>Category</h2>
+    <p><%= @board.categories.first.title %></p>
+  </div>
+  </div>
+
+    <div id="main" role="main">
+    <ul id='tiles' style="position: relative; list-style-type: none;">
+
+      <% @board.pins.each do |pin| %>
+
+      <li><img src="http://placekitten.com/200/300" width="100%"></a><%= pin.title %></li>
+
+      <% end %>
+
+    </ul>
+
+  </div>
+
+
+
+
+  <script>
+  $(function() {
+    // Call the layout function.
+    $('#tiles li').wookmark({
+      // Prepare layout options.
+      align: 'center',
+      autoResize: true,
+      comparator: null,
+      container: $('#main'),
+      direction: undefined,
+      ignoreInactiveItems: true,
+      itemWidth: 0,
+      fillEmptySpace: true,
+      flexibleWidth: 0,
+      offset: 2,
+      onLayoutChanged: undefined,
+      outerOffset: 0,
+      possibleFilters: [],
+      resizeDelay: 50,
+      verticalOffset: undefined
+    });
+  });
+  </script>
+
+</script>
+

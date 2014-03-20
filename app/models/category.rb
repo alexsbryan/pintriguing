@@ -15,6 +15,6 @@ class Category < ActiveRecord::Base
   )
   has_many :boards, :through => :category_assignments, :source => :board, :inverse_of=> :categories
 
-  has_many :pins, :through => :boards, :source => :pins
+  has_many :pins, :through => :boards, :source => :pin
 
 end

@@ -1,13 +1,21 @@
 <h1>Boards</h1>
 <% @boards.each do |board| %>
 <h3><%=link_to board.name, user_board_url(current_user.id,board) %></h3>
-<ul>
   <% board.pins.each do |pin| %>
 
     <li><%= link_to pin.title, pin_url(pin) %></li>
 
   <% end %>
-
-</ul>
 <br>
 <% end %>
+
+
+<!-- <a href="http://techcrunch.com/2014/03/20/orange-gives-all-of-its-data-to-frances-nsa/" class="embed">Stuff</a>
+
+<script>
+$(function(){
+   $("a.embed").oembed();
+});
+</script>
+ -->
+
