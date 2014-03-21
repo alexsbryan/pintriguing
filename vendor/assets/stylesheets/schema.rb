@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 20140320164836) do
   create_table "pins", force: true do |t|
     t.string   "title",      null: false
     t.string   "url",        null: false
+    t.string   "img_url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -19,9 +19,14 @@ catAssign2 = CategoryAssignment.create(board_id: 101, cat_id: 101)
 catAssign3 = CategoryAssignment.create(board_id: 100, cat_id: 102)
 
 
-coolPin = Pin.create(id: 100, title: 'Cool Pin', url: 'www.make.url')
-unCoolPin = Pin.create(id: 101, title: 'UNCool Pin', url: 'www.fake.url')
-uncouthPin = Pin.create(id: 102, title: 'Uncouth Pin', url: 'www.lake.url')
+coolPin = Pin.create(id: 100, title: 'Cool Pin', url: 'http://www.google.com', img_url:"http://placekitten.com/200/400")
+unCoolPin = Pin.create(id: 101, title: 'UNCool Pin', url: 'http://www.techcrunch.com', img_url: "http://placekitten.com/300/400" )
+uncouthPin = Pin.create(id: 102, title: 'Uncouth Pin', url: 'http://www.espn.com', img_url: "http://placekitten.com/400/400")
+
+30.times do |t|
+  pin = Pin.create(id: (105 + t), title: "Cool Pin #{t}", url: 'http://www.google.com', img_url:"http://placekitten.com/2#{t}0/4#{t}0")
+  BoardAssignment.create(board_id: 100, pin_id: (105+t))
+end
 
 
 pinAssign1 = BoardAssignment.create(board_id: 100, pin_id: 100)
@@ -37,9 +42,9 @@ noKCategory = Category.create(id: 104, title: 'No-K')
 
 cat1 = Category.create(id:1, title: "Animals")
 cat2 = Category.create(id:2, title: "Style")
-cat3 = Category.create(id:1, title: "Cookies")
-cat4 = Category.create(id:1, title: "Cars")
-cat5 = Category.create(id:1, title: "Sports")
-cat6 = Category.create(id:1, title: "Design")
-cat7 = Category.create(id:1, title: "Quotes")
-cat8 = Category.create(id:1, title: "Nature")
+cat3 = Category.create(id:3, title: "Cookies")
+cat4 = Category.create(id:4, title: "Cars")
+cat5 = Category.create(id:5, title: "Sports")
+cat6 = Category.create(id:6, title: "Design")
+cat7 = Category.create(id:7, title: "Quotes")
+cat8 = Category.create(id:8, title: "Nature")
