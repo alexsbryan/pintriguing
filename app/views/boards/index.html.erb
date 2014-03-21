@@ -1,4 +1,4 @@
-<h1>Boards</h1>
+<h1><%= current_user.first_name %>'s Boards</h1>
 <% @boards.each do |board| %>
 <h3><%=link_to board.name, user_board_url(current_user.id,board) %></h3>
   <% board.pins.each do |pin| %>

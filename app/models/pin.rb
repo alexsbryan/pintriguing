@@ -24,4 +24,8 @@ class Pin < ActiveRecord::Base
         self.url = "http://" + self.url
       end
     end
+
+    def self.random_pins
+      self.order("RANDOM()")
+    end
 end
