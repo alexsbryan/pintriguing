@@ -20,5 +20,8 @@ class Pin < ActiveRecord::Base
       unless self.img_url.include?("http://") || self.img_url.include?("https://")
         self.img_url = "http://" + self.img_url
       end
+      unless self.url.include?("http://") || self.url.include?("https://")
+        self.url = "http://" + self.url
+      end
     end
 end

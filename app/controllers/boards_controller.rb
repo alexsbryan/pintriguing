@@ -24,6 +24,8 @@ class BoardsController < ApplicationController
 
   def show
     @board = Board.find(params[:id])
+    @pin = Pin.new
+    @boards = Board.all.where(:owner_id => current_user.id)
   end
 
   private
