@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.oembed
+//= require jquery.embedly.min
 //= require bootstrap.min
 //= require jquery.wookmark
 //= require turbolinks

@@ -14,7 +14,7 @@ class PinsController < ApplicationController
     @pin = @board.pins.create(pin_params)
 
     if @board.save
-      redirect_to pins_url
+      redirect_to user_boards_url(current_user)
     else
       flash[:errors] = @board.errors.full_messages
       render :new

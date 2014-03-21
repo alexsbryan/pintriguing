@@ -7,21 +7,21 @@
       value="<%= form_authenticity_token %>">
 
   <label>Title
-      <input type='text' name="pin[title]" value='<%= @pin.title %>'>
+      <input type='text' name="pin[title]" value='<%= pin.title %>'>
   </label>
 
   <label>URL
-      <input type='text' name="pin[url]" value='<%= @pin.url %>'>
+      <input type='text' name="pin[url]" value='<%= pin.url %>'>
   </label>
 
   <label>Image Link
-      <input type='text' name="pin[img_url]" value='<%= @pin.img_url %>'>
+      <input type='text' name="pin[img_url]" value='<%= pin.img_url %>'>
   </label>
 
   <label>Board
     <select name='board[id]'>
       <option>
-      <% @boards.each do |board| %>
+      <% boards.each do |board| %>
       <option value='<%= board.id %>'>
         <%= board.name %>
         </option>

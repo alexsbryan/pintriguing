@@ -1,7 +1,7 @@
 class BoardsController < ApplicationController
   before_filter :authenticate_user!
   def index
-    @boards = Board.includes(:pins)
+    @boards = Board.where(:owner_id => current_user.id).includes(:pins)
   end
 
   def new

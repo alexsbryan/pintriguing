@@ -25,4 +25,5 @@ class Board < ActiveRecord::Base
 
   has_many :categories, :through => :category_assignments, :source => :category, :inverse_of=> :boards
   has_many :pins, :through => :board_assignments, :source => :pin
+
 end
