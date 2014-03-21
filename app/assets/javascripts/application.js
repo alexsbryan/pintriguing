@@ -18,3 +18,4 @@
 //= require jquery.wookmark
 //= require turbolinks
 //= require_tree .
+//= require jquery.infinitescroll

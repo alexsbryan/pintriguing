@@ -1,24 +1,24 @@
 <h1>Check these Pins</h1>
 
+
+
 <div id="main" role="main">
   <ul id='tiles'>
 
-    <% 10.times do |n| %>
-      <% @boards.length.times do |b| %>
-        <% pin = @boards[b].pins.sample  %>
+        <% @pins_on_board.each do |pob| %>
           <% height = 200+ rand()*200%>
+          <% pin = pob.pin %>
+          <% board = pob.board %>
             <li><a href="<%= pin.url %>"><img src="<%= pin.img_url  %>" width="100%"        height="<%= height %>"></a>
               <br>
               <a href="<%= pin_url(pin) %>"><%= pin.title %></a>
               <br>
-            <a href="<%= user_board_url(current_user, @boards[b]) %>">FROM: <%= @boards[b].name %></a>
+            <a href="<%= user_board_url(current_user, board) %>">FROM: <%= board.name %></a>
           </li>
           <br>
         <% end %>
-      <% end %>
   </ul>
 </div>
-
 
   <script>
   $(function() {

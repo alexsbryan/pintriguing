@@ -3,6 +3,7 @@ class CreateBoardAssignments < ActiveRecord::Migration
     create_table :board_assignments do |t|
       t.integer :board_id, :null => false
       t.integer :pin_id, :null => false
+      t.text :description
 
       t.timestamps
     end

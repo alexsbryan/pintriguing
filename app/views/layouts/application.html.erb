@@ -17,7 +17,9 @@
   <p class="alert alert-error"><%= alert %></p>
 <% end %>
 <div class='container-fluid'>
-<%= render :partial => 'pins/addPinModal' %>
+  <% if user_signed_in? %>
+    <%= render :partial => 'pins/addPinModal' %>
+  <% end %>
 <%= yield %>
 </div>
 

@@ -23,9 +23,10 @@ class BoardsController < ApplicationController
 
 
   def show
-    @board = Board.find(params[:id])
+    # @board = Board.find(params[:id])
     @pin = Pin.new
-    @boards = Board.all.where(:owner_id => current_user.id)
+    # @boards = Board.all.where(:owner_id => current_user.id)
+    @pins_on_board = BoardAssignment.where(:board_id => params[:id]).order("Random()").includes([{:board => :owner}, :pin])
   end
 
   private

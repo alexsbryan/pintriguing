@@ -1,8 +1,8 @@
 <div class='row'>
   <div class='col-xs-12'>
-    <h1><%= @board.name %></h1>
+    <h1><%= @pins_on_board.first.board.name %></h1>
     <h2>Category</h2>
-    <p><%= @board.categories.first.title %></p>
+    <p><%= @pins_on_board.first.board.categories.first.title %></p>
 
 <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
   Add Pin
@@ -15,7 +15,8 @@
     <div id="main" role="main">
     <ul id='tiles'>
 
-      <% @board.pins.each do |pin| %>
+      <% @pins_on_board.each do |pob| %>
+      <% pin = pob.pin %>
       <% height = 200+ rand()*200%>
       <li><a href="<%= pin.url %>"><img src="<%= pin.img_url %>" width="100%" height="<%= height %>"></a><%= pin.title %></a></li>
 
