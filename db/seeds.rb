@@ -23,7 +23,7 @@ coolPin = Pin.create(id: 100, title: 'Cool Pin', url: 'http://www.google.com', i
 unCoolPin = Pin.create(id: 101, title: 'UNCool Pin', url: 'http://www.techcrunch.com', img_url: "http://placekitten.com/300/400" )
 uncouthPin = Pin.create(id: 102, title: 'Uncouth Pin', url: 'http://www.espn.com', img_url: "http://placekitten.com/400/400")
 
-30.times do |t|
+100.times do |t|
   pin = Pin.create(id: (105 + t), title: "Cool Pin #{t}", url: 'http://www.google.com', img_url:"http://placekitten.com/2#{t}0/4#{t}0")
   BoardAssignment.create(board_id: 100, pin_id: (105+t))
 end

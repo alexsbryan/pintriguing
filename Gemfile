@@ -50,7 +50,7 @@ gem 'annotate'
 gem 'devise'
 
 gem 'kaminari'
-
+gem 'will_paginate'
 # Use ActiveModel has_secure_password
 gem 'bcrypt'
 

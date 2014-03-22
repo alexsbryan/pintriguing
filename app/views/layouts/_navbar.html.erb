@@ -26,10 +26,10 @@
         </li>
       </ul>
       </div>
-    <ul class="navbar-btn">
+
   <div class="btn-group">
-    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-      +
+    <button type="button" class="btn btn-default dropdown-toggle navbar-btn" data-toggle="dropdown">
+    <span class="glyphicon glyphicon-plus"></span>
     </button>
     <ul class="dropdown-menu" role="menu">
         <li>
@@ -41,7 +41,42 @@
         </li>
         <li><a href="#">Upload Pin</a></li>
       </ul>
+    </div>
+
+
+
+
+
+
+
+
+<div class="btn-group">
+    <button type="button" class="btn btn-default dropdown-toggle navbar-btn" data-toggle="dropdown">
+
+      <span>Categories</span>
+    </button>
+
+    <ul class="dropdown-menu scrollable-menu" role="menu">
+          <% Category.all.each do |cat| %>
+          <li><a href="<%= category_url(cat) %>"><%= cat.title %></a></li>
+          <% end %>
     </ul>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       <!-- <form class="navbar-form navbar-left pull-left" role="search">
         <div class="form-group">

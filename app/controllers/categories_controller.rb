@@ -3,7 +3,7 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.find(params[:id])
-    @boards = @category.boards.includes(:pins)
+    @pins_on_boards = @category.pins_on_boards.includes([{:board => :owner}, :pin]).page(params[:page])
   end
 
 end

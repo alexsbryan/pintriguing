@@ -1,28 +1,17 @@
-<div class='row'>
-  <div class='col-xs-12'>
-    <h1><%= @board.name %></h1>
-    <h2>Category</h2>
-    <p><%= @board.categories.first.title %></p>
 
-    <% if @pins_on_board %>
-    <div id="main" role="main">
-    <ul id='tiles'>
+<div id="main" role="main">
+<nav>
+<div id="page">
+   <%= paginate pins_on_boards %>
+  <ul id='tiles'>
 
-      <% @pins_on_board.each do |pob| %>
-      <% pin = pob.pin %>
-      <% height = 200+ rand()*200%>
-      <li><a href="<%= pin.url %>"><img src="<%= pin.img_url %>" width="100%" height="<%= height %>"></a><%= pin.title %></a></li>
-
-      <% end %>
-
-    </ul>
-  <% end %>
-
-  </div>
-  </div>
-
-
-
+           <% pins_on_boards.each do |pob| %>
+          <%= render "root/pins", pob: pob  %>
+          <% end %>
+  </ul>
+</div>
+</nav>
+</div>
 
 
   <script>
@@ -40,5 +29,3 @@
     });
   });
   </script>
-
-

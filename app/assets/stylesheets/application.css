@@ -17,3 +17,9 @@
 body {
     padding-top: 65px;
 }
+
+ .scrollable-menu {
+    max-height: 200px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}

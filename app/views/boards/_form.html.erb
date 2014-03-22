@@ -1,0 +1,30 @@
+
+<form action="<%= user_boards_url(current_user) %>" method="post">
+  <input
+      name="authenticity_token"
+      type="hidden"
+      value="<%= form_authenticity_token %>">
+
+  <input type='hidden' name='board[owner_id]' value="<%= current_user.id %>">
+
+  <label>Name
+      <input type='text' name="board[name]" value='<%= board.name %>'>
+  </label>
+
+  <label>Description
+      <input type='text' name="board[description]" value='<%= board.description %>'>
+  </label>
+
+  <label>Category
+    <select name='category[id]'>
+      <% categories.each do |category| %>
+      <option value='<%= category.id %>'>
+        <%= category.title %>
+        </option>
+      <% end %>
+    </select>
+  </label>
+
+
+  <p><input type="submit" value="Submit"></p>
+</form>

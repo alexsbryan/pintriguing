@@ -1,0 +1,14 @@
+
+
+          <div class="pin">
+            <% height = 200+ rand()*200%>
+            <% pin = pob.pin %>
+            <% board = pob.board %>
+            <li><a href="<%= pin.url %>"><img src="<%= pin.img_url  %>" width="100%"        height="<%= height %>"></a>
+              <br>
+              <a href="<%= pin_url(pin) %>"><%= pin.title %></a>
+              <br>
+            <a href="<%= user_board_url(current_user, board) %>">FROM: <%= board.name %></a>
+          </li>
+          <br>
+          </div>

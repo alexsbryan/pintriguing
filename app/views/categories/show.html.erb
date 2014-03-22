@@ -1,8 +1,10 @@
 <h1><%= @category.title  %></h1>
-<ul>
-<% @boards.each do |board| %>
-  <% board.pins.each do |pin| %>
-<li><%= link_to pin.title, pin_url(pin) %> pinned from <%= link_to board.name, user_boards_url(current_user, board) %></li>
-<% end %>
-<% end %>
-</ul>
+
+<%= render "layouts/pin_board", pins_on_boards: @pins_on_boards  %>
+
+
+
+
+
+
+
