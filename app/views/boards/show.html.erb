@@ -1,8 +1,10 @@
 <div class='row'>
   <div class='col-xs-12'>
     <h1><%= @board.name %></h1>
+    <% if !@board.categories.empty? %>
     <h2>Category</h2>
     <p><%= @board.categories.first.title %></p>
+    <% end %>
 
     <% if @pins_on_board %>
     <div id="main" role="main">

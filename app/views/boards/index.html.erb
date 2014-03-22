@@ -6,15 +6,74 @@
 <%= render :partial => 'boards/addBoardModal' %>
   </div>
 </div>
-<% @boards.each do |board| %>
-<h3><%=link_to board.name, user_board_url(current_user.id,board) %></h3>
-  <% board.pins.each do |pin| %>
 
-    <li><%= link_to pin.title, pin_url(pin) %></li>
 
+
+
+
+
+
+
+<div class='row'>
+  <div class='col-xs-12'>
+
+    <% @boards.each do |board| %>
+    <% if board.pins && !board.pins.empty? %>
+    <% pin = board.pins.sample(1).first  %>
+    <% else %>
+    <% pin = Pin.new %>
+    <% end %>
+        <div id="main" role="main">
+    <ul id='tiles'>
+      <% height = 200%>
+      <li><a href="<%= pin.url %>"><img src="<%= pin.img_url %>" alt="Add a Pin" width="100%" height="<%= height %>"></a><a href='<%= user_board_url(current_user,board) %>'><%= board.name %></a></li>
+
+
+    </ul>
   <% end %>
-<br>
-<% end %>
+
+  </div>
+  </div>
+
+
+
+
+
+  <script>
+  $(function() {
+    // Call the layout function.
+    $('#tiles li').wookmark({
+      // Prepare layout options.
+      align: 'center',
+      // Prepare layout options.
+      autoResize: true, // This will auto-update the layout when the browser window is resized.
+      container: $('#main'), // Optional, used for some extra CSS styling
+      offset: 5, // Optional, the distance between grid items
+      outerOffset: 10, // Optional, the distance to the containers border
+      itemWidth: 310 // Optional, the width of a grid item
+    });
+  });
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <script>
