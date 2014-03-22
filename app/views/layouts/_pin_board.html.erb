@@ -1,8 +1,7 @@
 
 <div id="main" role="main">
-<nav>
-<div id="page">
-   <%= paginate pins_on_boards %>
+
+<div class="ressource">
   <ul id='tiles'>
 
            <% pins_on_boards.each do |pob| %>
@@ -10,22 +9,7 @@
           <% end %>
   </ul>
 </div>
-</nav>
+
 </div>
 
 
-  <script>
-  $(function() {
-    // Call the layout function.
-    $('#tiles li').wookmark({
-      // Prepare layout options.
-      align: 'center',
-      // Prepare layout options.
-      autoResize: true, // This will auto-update the layout when the browser window is resized.
-      container: $('#main'), // Optional, used for some extra CSS styling
-      offset: 5, // Optional, the distance between grid items
-      outerOffset: 10, // Optional, the distance to the containers border
-      itemWidth: 310 // Optional, the width of a grid item
-    });
-  });
-  </script>

@@ -19,3 +19,4 @@
 //= require turbolinks
 //= require_tree .
 //= require jquery.infinitescroll
+//= require endless_scroll
