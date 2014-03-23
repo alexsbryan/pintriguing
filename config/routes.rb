@@ -5,6 +5,7 @@ Pintriguing::Application.routes.draw do
     resources :boards
     resources :pins
     resources :pins_on_boards
+    resources :users
   end
 
   root to: "root#root"

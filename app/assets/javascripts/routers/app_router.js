@@ -6,7 +6,8 @@ Pintriguing.Routers.AppRouter = Backbone.Router.extend({
 
   routes: {
     "": "home",
-    "users/:id/boards/:id": "boardShow"
+    "users/:id/boards/:id": "boardShow",
+    "users/:id": "userShow"
   },
 
   home: function () {
@@ -27,6 +28,25 @@ Pintriguing.Routers.AppRouter = Backbone.Router.extend({
       success: function (b) {
         var boardShowView = new Pintriguing.Views.BoardShow({
           model: b
+        })
+        that._swapView(boardShowView)
+      }
+    })
+
+  },
+
+  userShow: function (userId) {
+
+    var that = this
+
+    var user = new Pintriguing.Models.User({
+      id: userId
+    })
+
+    user.fetch({
+      success: function (u) {
+        var boardShowView = new Pintriguing.Views.UserShow({
+          model: u
         })
         that._swapView(boardShowView)
       }
