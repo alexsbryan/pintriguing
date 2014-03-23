@@ -51,6 +51,9 @@ gem 'devise'
 
 gem 'kaminari'
 gem 'will_paginate'
+
+gem 'backbone-on-rails'
+gem 'ejs'
 # Use ActiveModel has_secure_password
 gem 'bcrypt'
 

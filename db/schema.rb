@@ -17,8 +17,9 @@ ActiveRecord::Schema.define(version: 20140320164836) do
   enable_extension "plpgsql"
 
   create_table "board_assignments", force: true do |t|
-    t.integer  "board_id",   null: false
-    t.integer  "pin_id",     null: false
+    t.integer  "board_id",    null: false
+    t.integer  "pin_id",      null: false
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
