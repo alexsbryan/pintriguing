@@ -1,7 +1,8 @@
 Pintriguing.Routers.AppRouter = Backbone.Router.extend({
   initialize: function (options) {
     this.collection =  options.collection,
-    this.$rootEl = options.$rootEl
+    this.$rootEl = options.$rootEl,
+    this.current_user = options.current_user
   },
 
   routes: {
@@ -13,7 +14,8 @@ Pintriguing.Routers.AppRouter = Backbone.Router.extend({
 
   home: function () {
     var rootIndexView = new Pintriguing.Views.HomeView({
-      collection: this.collection
+      collection: this.collection,
+      boardNames: this.current_user.boards()//.pluck('name')
     })
     this._swapView(rootIndexView)
   },
@@ -55,7 +57,7 @@ Pintriguing.Routers.AppRouter = Backbone.Router.extend({
   },
 
   userShow: function (userId) {
-
+    debugger
     var that = this
 
     var user = new Pintriguing.Models.User({

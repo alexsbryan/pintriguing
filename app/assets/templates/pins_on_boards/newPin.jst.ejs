@@ -1,0 +1,24 @@
+<h1>Pin it</h1>
+
+<form class='pin-it'>
+
+  <input type='hidden' name="pin_on_board[pin_id]" value='<%= pin %>'>
+
+  <label>Description
+      <input type='text' name="pin_on_board[title]">
+  </label>
+
+  <label>Board
+    <select name='pin_on_board[board_id]'>
+      <option>
+      <% boards.each(function(board) { %>
+      <option value='<%= board.escape('id') %>'>
+        <%= board.escape('name') %>
+        </option>
+      <% }) %>
+    </select>
+  </label>
+
+
+  <p><input type="submit" value="Submit"></p>
+</form>

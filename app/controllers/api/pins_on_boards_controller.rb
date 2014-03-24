@@ -12,7 +12,7 @@ class Api::PinsOnBoardsController < ApplicationController
 
     def create
       ##This is the process of repinning an existing pin
-      board = Board.find(params[:pin_on_board][:board_id])
+      board = Board.find(params[:board][:id])
 
       # check if board being pinned to is own board
       if board.user.id == current_user.id
@@ -43,6 +43,6 @@ class Api::PinsOnBoardsController < ApplicationController
     end
 
     def pin_on_board_params
-      params.require(:pin_on_board).include(:board_id, :pin_id)
+      params.require(:pin_on_board).include(:title, :board_id, :pin_id)
     end
 end

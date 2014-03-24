@@ -6,7 +6,7 @@ var intervalID = -1000;
 function checkScroll() {
   //ONLY Works in rails right now
   //collection.fetch({ data: $.param({ page: 1}) }); maybe will help
-  if (nearBottomOfPage()) {
+  if (nearBottomOfPage() && currentPage<10) {
     currentPage++;
   console.log("endless request "+ currentPage);
 
