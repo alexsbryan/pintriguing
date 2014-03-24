@@ -23,3 +23,8 @@ body {
     overflow-y: auto;
     overflow-x: hidden;
 }
+
+.navbar-brand img {
+  height: 100%;
+
+}
