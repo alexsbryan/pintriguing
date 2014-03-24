@@ -12,18 +12,17 @@ class Api::PinsOnBoardsController < ApplicationController
 
     def create
       ##This is the process of repinning an existing pin
-      board = Board.find(params[:board][:id])
-
+      board = Board.find(params[:pin_on_board][:board_id])
       # check if board being pinned to is own board
-      if board.user.id == current_user.id
+      if board.owner.id == current_user.id
         @pin_on_board = BoardAssignment.new(pin_on_board_params)
         if @pin_on_board.save
-          render "show"
+          render :json => @pin_on_board, :status => 422
         else
           render :json => @pin_on_board.errors.full_messages, :status => 422
         end
       else
-        render :json => ["You can't pin on this board"]
+        render :json => ["You can't pin on this board"], :status => 422
       end
     end
 
@@ -43,6 +42,6 @@ class Api::PinsOnBoardsController < ApplicationController
     end
 
     def pin_on_board_params
-      params.require(:pin_on_board).include(:title, :board_id, :pin_id)
+      params.require(:pin_on_board).permit(:description, :board_id, :pin_id)
     end
 end

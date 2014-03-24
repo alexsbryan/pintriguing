@@ -36,7 +36,7 @@
       <div class="modal-footer">\
         <% if (allowCancel) { %>\
           <% if (cancelText) { %>\
-           \
+           <a href="#" class="cancel"></a>\
           <% } %>\
         <% } %>\
         \

@@ -11,7 +11,6 @@ window.Pintriguing = {
 
     current_user.fetch({
       success: function (u) {
-        console.log('it worked')
       }
     })
 

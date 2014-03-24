@@ -7,6 +7,7 @@ Pintriguing.Routers.AppRouter = Backbone.Router.extend({
 
   routes: {
     "": "home",
+    "pins/:id": "pinShow",
     "categories/:id": "categoryShow",
     "users/:id/boards/:id": "boardShow",
     "users/:id": "userShow"
@@ -51,6 +52,24 @@ Pintriguing.Routers.AppRouter = Backbone.Router.extend({
           model: c
         })
         that._swapView(categoryShowView)
+      }
+    })
+
+  },
+
+  pinShow: function (pinId) {
+    var that = this
+
+    var pin = new Pintriguing.Models.PinOnBoard({
+      id: pinId
+    })
+
+    pin.fetch({
+      success: function (b) {
+        var pinShowView = new Pintriguing.Views.PinShow({
+          model: b
+        })
+        that._swapView(pinShowView)
       }
     })
 

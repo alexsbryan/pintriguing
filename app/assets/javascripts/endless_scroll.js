@@ -2,11 +2,13 @@
 
 var currentPage = 1;
 var intervalID = -1000;
+var scrollTop = $(window).scrollTop()
 
 function checkScroll() {
   //ONLY Works in rails right now
   //collection.fetch({ data: $.param({ page: 1}) }); maybe will help
   if (nearBottomOfPage() && currentPage<10) {
+    scrollTop= $(window).scrollTop()
     currentPage++;
   console.log("endless request "+ currentPage);
 
@@ -38,7 +40,8 @@ function checkScroll() {
 }
 
 function nearBottomOfPage() {
-  return scrollDistanceFromBottom() < 50;
+  var newST = $(window).scrollTop()
+  return (scrollDistanceFromBottom() < 50 && newST > scrollTop);
 }
 
 function scrollDistanceFromBottom(argument) {

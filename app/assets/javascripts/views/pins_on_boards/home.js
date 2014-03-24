@@ -6,7 +6,8 @@ Pintriguing.Views.HomeView = Backbone.View.extend({
   },
 
   events: {
-    "click #pin-it": "pin"
+    "click #pin-it": "pin",
+    "click .pin": "showPin"
   },
 
   template: JST['pins_on_boards/home'],
@@ -30,16 +31,35 @@ Pintriguing.Views.HomeView = Backbone.View.extend({
       pin: pin
     });
 
-      debugger
 
     var modal = new Backbone.BootstrapModal({
       content: newPOBView,
-      title: "Pin it!"
+      title: "Pin it!",
+      modal: this
     }).open();
     //Demo of how to get modal to work
     // var addBoardView = new Pintriguing.Views.AddBoard();
  //    var modal = new Backbone.BootstrapModal({ content: addBoardView}).open();
 
+  },
+
+  showPin: function (event) {
+
+    var that = this
+
+    var pobId = $(event.currentTarget).attr('data-pobid');
+
+    var pob = pins.get(parseInt(pobId))
+
+    var pinShowView = new Pintriguing.Views.PinShow({
+      model: pob
+    })
+
+    var modal = new Backbone.BootstrapModal({
+      content: pinShowView
+    }).open();
+
   }
 
 });
+
