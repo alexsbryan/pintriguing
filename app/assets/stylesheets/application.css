@@ -27,6 +27,9 @@ body {
 .navbar-brand img {
   height: 100%;
 }
+.navbar-brand {
+  width: 10%;
+}
 
 .nav-center {
     margin:0;

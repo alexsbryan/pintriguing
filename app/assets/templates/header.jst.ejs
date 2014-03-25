@@ -1,17 +1,17 @@
 
 
           <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse pull-right" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
+
+            <ul class="nav navbar-nav pull-right">
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= user.escape('first_name') %><b class="caret"></b></a>
-                <ul class="dropdown-menu">
+                <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dLabel">
                   <li><a href="<%= '/#users/' + user.id %>">Your Profile & Boards</a></li>
 
                 </ul>
               </li>
             </ul>
-            </div>
+
 
         <div class="btn-group">
           <button type="button" class="btn btn-default dropdown-toggle navbar-btn" data-toggle="dropdown">
@@ -43,7 +43,7 @@
                 <li><a href="<%= '/#categories/' + cat.id %>"><%= cat.escape('title') %></a></li>
                 <% }) %>
           </ul>
-        </div
+        </div>
 
 
 
