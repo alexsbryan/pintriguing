@@ -7,6 +7,11 @@ class Api::CategoriesController < ApplicationController
       render "show"
     end
 
+    def index
+      @categories = Category.all
+      render :json => @categories
+    end
+
 
 
 end

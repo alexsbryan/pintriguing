@@ -76,7 +76,7 @@ Pintriguing.Routers.AppRouter = Backbone.Router.extend({
   },
 
   userShow: function (userId) {
-    debugger
+
     var that = this
 
     var user = new Pintriguing.Models.User({

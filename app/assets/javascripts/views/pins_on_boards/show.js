@@ -20,7 +20,7 @@ Pintriguing.Views.PinShow = Backbone.View.extend({
   },
 
   closeModal: function () {
-    $("a.cancel")[0].click()
+    $("a.cancel").last().click()
   }
 
 });

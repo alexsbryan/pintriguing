@@ -9,13 +9,17 @@
 
           <div class="pin" data-pinid="<%= pob.escape('pin_id') %>" data-pobid="<%= pob.escape('id') %>">
             <% var height = 200 + Math.random()*200 %>
-            <li><img src="<%= pob.escape('img_url')  %>" width="100%"        height="<%= height %>">
-              <br>
-              <a href="<%= '#pins/' + pob.escape('pin_id') %>">PLACE<%= pob.escape('description') %></a>
+            <li>
+
+              <img src="<%= pob.escape('img_url')  %>" width="100%"        height="<%= height %>">
+
+              <div class='pin-it-bar'>
+              <button type="button" data-pinid="<%= pob.escape('pin_id') %>" id='pin-it' class='btn btn-default span'>Pin it</button>
+              </div>
+              <p><%= pob.escape('description') %></p>
               <br>
             <a href="<%= '#users/' + pob.escape('owner_id') + '/boards/' + pob.escape('board_id') %>">FROM: <%= pob.escape('board_name') %></a>
-            <br>
-            <button type="button" data-pinid="<%= pob.escape('pin_id') %>" id='pin-it' class='btn btn-default'>Pin it</button>
+
           </li>
           <br>
           </div>

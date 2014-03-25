@@ -25,7 +25,7 @@ uncouthPin = Pin.create(id: 102, title: 'Uncouth Pin', url: 'http://www.espn.com
 
 100.times do |t|
   pin = Pin.create(id: (105 + t), title: "Cool Pin #{t}", url: 'http://www.google.com', img_url:"http://placekitten.com/2#{t}0/4#{t}0")
-  BoardAssignment.create(board_id: 100, pin_id: (105+t))
+  BoardAssignment.create(board_id: 100, pin_id: (105+t), description: (0...50).map { ('a'..'z').to_a[rand(26)] }.join)
 end
 
 

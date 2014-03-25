@@ -2,6 +2,10 @@ Pintriguing.Views.UserShow = Backbone.View.extend({
 
   template: JST['users/show'],
 
+  events: {
+    "click #addBoard": "addBoard",
+  },
+
   render: function () {
     var renderedContent = this.template({
       boards: this.model.boards(),
@@ -10,6 +14,23 @@ Pintriguing.Views.UserShow = Backbone.View.extend({
 
     this.$el.html(renderedContent)
     return this
-  }
+  },
+
+  addBoard: function (event) {
+    var cuser = $('#content').attr('data-cuser-id');
+    var newBoardView = new Pintriguing.Views.AddBoard({
+      user: cuser,
+      boards: this.model.boards()
+    });
+
+
+    var modal = new Backbone.BootstrapModal({
+      content: newBoardView
+    }).open();
+    //Demo of how to get modal to work
+    // var addBoardView = new Pintriguing.Views.AddBoard();
+ //    var modal = new Backbone.BootstrapModal({ content: addBoardView}).open();
+
+  },
 
 });

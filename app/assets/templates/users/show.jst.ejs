@@ -1,17 +1,19 @@
 
 <h1><%= user.escape('first_name') + ' ' + user.escape('last_name')  %>'s Boards</h1>
-
+<button id='addBoard' class='btn btn-primary'>Add Board</button>
 
   <div id="main" role="main">
   <ul id='tiles'>
 <% boards.each(function(board){ %>
+  <% debugger %>
+  <% if(board.pins_on_boards().length >0 ) { %>
   <% var pob = board.pins_on_boards().first() %>
 
       <% height = 200%>
       <li><a href="<%= pob.escape('url') %>"><img src="<%= pob.escape('img_url') %>" alt="Add a Pin" width="100%" height="<%= height %>"></a><a href='<%= '#users/' + pob.escape('owner_id') + '/boards/' + pob.escape('board_id') %>'><%= board.escape('name') %></a></li>
 
 
-<% }) %>
+<% }}) %>
 
    </ul>
    </div>

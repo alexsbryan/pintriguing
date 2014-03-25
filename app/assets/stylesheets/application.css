@@ -9,7 +9,7 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
-  *= require bootstrap.min
+*= require bootstrap
 *= require wookmark
  *= require_tree .
  */
@@ -26,5 +26,25 @@ body {
 
 .navbar-brand img {
   height: 100%;
+}
 
+.nav-center {
+    margin:0;
+    float:none;
+}
+
+
+
+a {
+  width: 100%;
+  word-wrap: break-word;
+}
+
+.pin p {
+  width: 100%;
+  word-wrap: break-word;
+}
+
+.btn.span {
+  width:100%;
 }

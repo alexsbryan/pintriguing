@@ -7,7 +7,7 @@ Pintriguing.Views.HomeView = Backbone.View.extend({
 
   events: {
     "click #pin-it": "pin",
-    "click .pin": "showPin"
+    "click .pin img": "showPin"
   },
 
   template: JST['pins_on_boards/home'],
@@ -46,8 +46,7 @@ Pintriguing.Views.HomeView = Backbone.View.extend({
   showPin: function (event) {
 
     var that = this
-
-    var pobId = $(event.currentTarget).attr('data-pobid');
+    var pobId = $(event.currentTarget).parent().parent().attr('data-pobid');
 
     var pob = pins.get(parseInt(pobId))
 

@@ -16,11 +16,11 @@ class Api::BoardsController < ApplicationController
 
   def create
     @category = Category.find(params[:category][:id])
-    @board = @category.boards.create(board_params)
+    @board = @category.boards.build(board_params)
     #added in case I can't get current user from backbone
     @board.owner_id = current_user.id
     if @board.save
-      render "show"
+      render :json => @board
     else
      render :json => @board.errors.full_messages
     end

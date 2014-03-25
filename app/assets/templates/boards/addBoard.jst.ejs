@@ -1,8 +1,6 @@
 
-
-       <form>
-
-
+<h1>Add Board</h1>
+       <form class='new-board'>
          <label>Name
              <input type='text' name="board[name]" >
          </label>
@@ -11,6 +9,16 @@
              <input type='text' name="board[description]">
          </label>
 
+         <label>Board
+           <select name='category[id]'>
+             <option>
+             <% categories.each(function(category) { %>
+             <option value='<%= category.escape('id') %>'>
+               <%= category.escape('title') %>
+               </option>
+             <% }) %>
+           </select>
+         </label>
 
          <p><input type="submit" value="Submit"></p>
        </form>

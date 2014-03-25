@@ -14,6 +14,9 @@ window.Pintriguing = {
       }
     })
 
+    categories = new Pintriguing.Collections.Categories();
+    categories.fetch();
+
     var $rootEl = $('#content')
 
     pins.fetch({
