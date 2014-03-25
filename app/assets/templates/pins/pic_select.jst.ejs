@@ -1,0 +1,10 @@
+<div class='container-fluid'>
+
+
+<% _.each(images, function(image){ %>
+<div class='col-md-3'>
+<img src="<%= image.url %>" data-url="<%= image.url %>" class='img-responsive'>
+</div>
+
+<% }) %>
+</div>

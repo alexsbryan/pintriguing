@@ -15,7 +15,7 @@
               <br>
               <a href="<%= '#pins/' + pob.escape('pin_id') %>">PLACE<%= pob.escape('description') %></a>
               <br>
-            <a href="<%= '#boards/' + pob.escape('board_id') %>">FROM: <%= pob.escape('board_name') %></a>
+            <a href="<%= '#users/' + pob.escape('owner_id') + '/boards/' + pob.escape('board_id') %>">FROM: <%= pob.escape('board_name') %></a>
           </li>
           <br>
           </div>

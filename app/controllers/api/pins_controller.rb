@@ -7,11 +7,11 @@ class Api::PinsController < ApplicationController
 
 
  def create
-   @board = Board.find(params[:board][:id])
+   @board = Board.find(params[:board_id])
    @pin = @board.pins.create(pin_params)
 
    if @board.save
-     render "show"
+     render :json => @pin
    else
      render :json => @pin.errors.full_messages, :status => 422
    end
@@ -47,6 +47,6 @@ class Api::PinsController < ApplicationController
  private
 
  def pin_params
-   params.require(:pin).permit(:title, :url, :img_url)
+   params.permit(:title, :url, :img_url)
  end
 end

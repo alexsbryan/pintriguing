@@ -5,7 +5,7 @@ window.Pintriguing = {
   Routers: {},
   initialize: function() {
     pins = new Pintriguing.Collections.PinsOnBoards();
-    var current_user = new Pintriguing.Models.User({
+    current_user = new Pintriguing.Models.User({
       id: parseInt($(document).find('#content').attr('data-cuser-id'))
     })
 

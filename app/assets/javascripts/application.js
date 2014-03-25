@@ -20,6 +20,7 @@
 //= require underscore
 //= require backbone
 //= require backbone.bootstrap-modal
+//= require jquery.embedly
 //= require pintriguing
 //= require_tree ../templates
 //= require_tree ./models
