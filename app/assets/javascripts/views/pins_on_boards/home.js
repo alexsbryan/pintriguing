@@ -26,13 +26,17 @@ Pintriguing.Views.HomeView = Backbone.View.extend({
 
   pin: function (event) {
     var pin = $(event.currentTarget).attr('data-pinid');
-    var pickPhotoView = new Pintriguing.Views.PickWebPhoto({
-      boardNames: this.boardNames,
-      model: pin
-    });
-    var modal = new Backbone.BootstrapModal({
-      content: pickPhotoView
-    }).open()
+     var newPOBView = new Pintriguing.Views.NewPinOnBoard({
+       boardNames: this.boardNames,
+       pin: pin
+     });
+
+
+     var modal = new Backbone.BootstrapModal({
+       content: newPOBView,
+       title: "Pin it!",
+       modal: this
+     }).open();
 
 
 

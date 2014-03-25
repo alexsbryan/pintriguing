@@ -13,6 +13,7 @@ Pintriguing.Routers.AppRouter = Backbone.Router.extend({
     "users/:id": "userShow"
   },
 
+
   home: function () {
     var rootIndexView = new Pintriguing.Views.HomeView({
       collection: this.collection,

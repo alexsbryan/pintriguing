@@ -4,7 +4,7 @@ window.Pintriguing = {
   Views: {},
   Routers: {},
   initialize: function() {
-    pins = new Pintriguing.Collections.PinsOnBoards();
+    //current user
     current_user = new Pintriguing.Models.User({
       id: parseInt($(document).find('#content').attr('data-cuser-id'))
     })
@@ -13,14 +13,26 @@ window.Pintriguing = {
       success: function (u) {
       }
     })
-
+    //all the categories
     categories = new Pintriguing.Collections.Categories();
     categories.fetch();
+
+    //pins collection
+    pins = new Pintriguing.Collections.PinsOnBoards();
 
     var $rootEl = $('#content')
 
     pins.fetch({
       success: function (resp) {
+
+        // render header
+      var header = new Pintriguing.Views.Header({
+        model: current_user,
+        collection: pins
+      });
+      $("#header").html(header.render().$el);
+
+
         new Pintriguing.Routers.AppRouter({
           $rootEl: $rootEl,
           collection: pins,
