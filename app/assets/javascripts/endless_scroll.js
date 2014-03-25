@@ -1,61 +1,61 @@
-
-
-var currentPage = 1;
-var intervalID = -1000;
-var scrollTop = $(window).scrollTop()
-
-function checkScroll() {
-  //ONLY Works in rails right now
-  //collection.fetch({ data: $.param({ page: 1}) }); maybe will help
-  if (nearBottomOfPage() && currentPage<10) {
-    scrollTop= $(window).scrollTop()
-    currentPage++;
-  console.log("endless request "+ currentPage);
-
-
-    // Call the layout function.
-
-    pins.fetch({
-      data: $.param({ page: currentPage}),
-      remove: false,
-      success: function () {
-
-      }
-     })
-
-
-
-  // $('#tiles li').wookmark({
-  //   // Prepare layout options.
-  //   align: 'center',
-  //   // Prepare layout options.
-  //   autoResize: true, // This will auto-update the layout when the browser window is resized.
-  //   container: $('#main'), // Optional, used for some extra CSS styling
-  //   offset: 5, // Optional, the distance between grid items
-  //   outerOffset: 10, // Optional, the distance to the containers border
-  //   itemWidth: 310 // Optional, the width of a grid item
-  // });
-
-  }
-}
-
-function nearBottomOfPage() {
-  var newST = $(window).scrollTop()
-  return (scrollDistanceFromBottom() < 50 && newST > scrollTop);
-}
-
-function scrollDistanceFromBottom(argument) {
-  return pageHeight() - (window.pageYOffset + self.innerHeight);
-}
-
-function pageHeight() {
-  return Math.max(document.body.scrollHeight, document.body.offsetHeight);
-}
-
-$('document').ready(function(){
-	intervalID = setInterval(checkScroll, 250);
-})
-
+//
+//
+// var currentPage = 1;
+// var intervalID = -1000;
+// var scrollTop = $(window).scrollTop()
+//
+// function checkScroll() {
+//   //ONLY Works in rails right now
+//   //collection.fetch({ data: $.param({ page: 1}) }); maybe will help
+//   if (nearBottomOfPage() && currentPage<10) {
+//     scrollTop= $(window).scrollTop()
+//     currentPage++;
+//   console.log("endless request "+ currentPage);
+//
+//
+//     // Call the layout function.
+//
+//     pins.fetch({
+//       data: $.param({ page: currentPage}),
+//       remove: false,
+//       success: function () {
+//
+//       }
+//      })
+//
+//
+//
+//   // $('#tiles li').wookmark({
+//   //   // Prepare layout options.
+//   //   align: 'center',
+//   //   // Prepare layout options.
+//   //   autoResize: true, // This will auto-update the layout when the browser window is resized.
+//   //   container: $('#main'), // Optional, used for some extra CSS styling
+//   //   offset: 5, // Optional, the distance between grid items
+//   //   outerOffset: 10, // Optional, the distance to the containers border
+//   //   itemWidth: 310 // Optional, the width of a grid item
+//   // });
+//
+//   }
+// }
+//
+// function nearBottomOfPage() {
+//   var newST = $(window).scrollTop()
+//   return (scrollDistanceFromBottom() < 50 && newST > scrollTop);
+// }
+//
+// function scrollDistanceFromBottom(argument) {
+//   return pageHeight() - (window.pageYOffset + self.innerHeight);
+// }
+//
+// function pageHeight() {
+//   return Math.max(document.body.scrollHeight, document.body.offsetHeight);
+// }
+//
+// $('document').ready(function(){
+//   intervalID = setInterval(checkScroll, 250);
+// })
+//
 
 
 

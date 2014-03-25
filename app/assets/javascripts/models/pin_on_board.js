@@ -1,5 +1,5 @@
 Pintriguing.Models.PinOnBoard = Backbone.Model.extend({
-  urlRoot: '/api/pins_on_boards',
+  urlRoot: '/api/pins_on_boards'
 
   // board: function () {
   //   if (!this._board) {

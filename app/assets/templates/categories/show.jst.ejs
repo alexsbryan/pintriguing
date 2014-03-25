@@ -13,7 +13,11 @@
             <% var height = 200 + Math.random()*200 %>
             <li><a href="<%= pob.escape('url') %>"><img src="<%= pob.escape('img_url')  %>" width="100%"        height="<%= height %>"></a>
               <br>
-              <a href="<%= '#pins/' + pob.escape('pin_id') %>">PLACE<%= pob.escape('description') %></a>
+              <div class='pin-it-bar'>
+              <button type="button" data-pinid="<%= pob.escape('pin_id') %>" id='pin-it' class='btn btn-default span'>Pin it</button>
+              </div>
+              <br>
+              <a href="<%= '#pins/' + pob.escape('pin_id') %>"><%= pob.escape('description') %></a>
               <br>
             <a href="<%= '#users/' + pob.escape('owner_id') + '/boards/' + pob.escape('board_id') %>">FROM: <%= pob.escape('board_name') %></a>
           </li>

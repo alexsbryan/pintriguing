@@ -12,7 +12,9 @@ Pintriguing.Models.Category = Backbone.Model.extend({
 
   parse: function (jsonResp) {
     if(jsonResp.pins_on_boards) {
-      this.pins_on_boards().set(jsonResp.pins_on_boards);
+      this.pins_on_boards().add(jsonResp.pins_on_boards);
+      this.page = parseInt(jsonResp.page);
+      this.total_pages = parseInt(jsonResp.total_pages);
       delete jsonResp.pins_on_boards;
     }
     return jsonResp;

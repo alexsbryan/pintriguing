@@ -50,7 +50,7 @@ gem 'annotate'
 gem 'devise'
 
 gem 'kaminari'
-gem 'will_paginate'
+
 
 gem 'backbone-on-rails'
 gem 'ejs'

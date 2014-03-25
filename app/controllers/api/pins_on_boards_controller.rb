@@ -1,7 +1,8 @@
 class Api::PinsOnBoardsController < ApplicationController
   before_filter :authenticate_user!
   def index
-      @pins_on_boards = BoardAssignment.order(:created_at).includes([{:board => :owner}, :pin]).paginate(:page => params[:page], :per_page =>20)
+      params[:page] ||= 1
+      @pins_on_boards = BoardAssignment.order(:created_at).includes([{:board => :owner}, :pin]).page(params[:page])
       render "index"
     end
 

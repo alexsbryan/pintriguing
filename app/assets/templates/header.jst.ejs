@@ -7,6 +7,7 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= user.escape('first_name') %><b class="caret"></b></a>
                 <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dLabel">
                   <li><a href="<%= '/#users/' + user.id %>">Your Profile & Boards</a></li>
+                  <li><a href="/users/sign_out">Log out</a></li>
 
                 </ul>
               </li>

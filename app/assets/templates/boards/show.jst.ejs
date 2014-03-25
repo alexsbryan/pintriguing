@@ -12,6 +12,10 @@
           <div class="pin">
             <% var height = 200 + Math.random()*200 %>
             <li><a href="<%= pob.escape('url') %>"><img src="<%= pob.escape('img_url')  %>" width="100%"        height="<%= height %>"></a>
+
+              <div class='pin-it-bar'>
+              <button type="button" data-pinid="<%= pob.escape('pin_id') %>" id='pin-it' class='btn btn-default span'>Pin it</button>
+              </div>
               <br>
               <a href="<%= '#pins/' + pob.escape('pin_id') %>">PLACE<%= pob.escape('description') %></a>
               <br>

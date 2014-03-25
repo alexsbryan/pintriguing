@@ -28,7 +28,16 @@ body {
   height: 100%;
 }
 .navbar-brand {
-  width: 10%;
+  width: 125px;
+}
+
+#pin-it {
+  background-image: linear-gradient(#e63d45, #c11a22);
+  box-shadow: 0 1px 1px 0;
+  border: 1px solid #920c12;
+  color: #FFF ;
+  font-size: 20px;
+  margin-top: 10px;
 }
 
 .nav-center {
@@ -51,3 +60,8 @@ a {
 .btn.span {
   width:100%;
 }
+
+
+
+
+

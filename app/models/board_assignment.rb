@@ -13,4 +13,5 @@ class BoardAssignment < ActiveRecord::Base
   belongs_to :board
   belongs_to :pin
 
+  paginates_per 5
 end

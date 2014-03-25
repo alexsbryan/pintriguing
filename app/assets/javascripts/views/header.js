@@ -2,6 +2,10 @@ Pintriguing.Views.Header = Backbone.View.extend({
 
   template: JST["header"],
 
+  initialize: function () {
+    this.listenTo(categories, 'sync', this.render)
+  },
+
   events: {
     'click #addPin': 'addPin'
   },
