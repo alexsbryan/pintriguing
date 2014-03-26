@@ -17,7 +17,7 @@ Pintriguing.Views.NewPinOnBoard = Backbone.View.extend({
     var $formData = $(event.currentTarget).serializeJSON();
     pins.create($formData)
 
-     $("a.close")[0].click()
+     $("a.cancel").last().click()
   },
 
   render: function () {

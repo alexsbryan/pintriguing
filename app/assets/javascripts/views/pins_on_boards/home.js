@@ -14,6 +14,7 @@ Pintriguing.Views.HomeView = Backbone.View.extend({
   template: JST['pins_on_boards/home'],
 
   render: function () {
+    current_user.boards().fetch();
     var scrollTop = $(window).scrollTop()
 
     var renderedContent = this.template({
@@ -28,7 +29,7 @@ Pintriguing.Views.HomeView = Backbone.View.extend({
   pin: function (event) {
     var pin = $(event.currentTarget).attr('data-pinid');
     var newPOBView = new Pintriguing.Views.NewPinOnBoard({
-      boardNames: this.boardNames,
+      boardNames: current_user.boards(),
       pin: pin
     });
 

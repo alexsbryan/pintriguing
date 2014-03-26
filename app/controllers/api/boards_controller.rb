@@ -20,10 +20,10 @@ class Api::BoardsController < ApplicationController
     @board = @category.boards.build(board_params)
     #added in case I can't get current user from backbone
     @board.owner_id = current_user.id
-    if @board.save
+    if @category.save
       render :json => @board
     else
-     render :json => @board.errors.full_messages
+     render :json => @board.errors.full_messages, status: 422
     end
   end
 

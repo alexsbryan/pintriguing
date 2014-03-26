@@ -16,6 +16,7 @@ Pintriguing.Views.AddBoard = Backbone.View.extend({
     this.boards.create($formData)
 
       $("a.cancel").last().click()
+    current_user.boards().fetch()
   },
 
   render: function () {
