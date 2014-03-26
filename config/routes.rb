@@ -19,6 +19,9 @@ Pintriguing::Application.routes.draw do
     resources :boards
   end
 
+
+  post '/users/guest', to: 'users#guest', as: 'guest'
+
   resources :pins
 
   resources :categories, :only =>[:show]

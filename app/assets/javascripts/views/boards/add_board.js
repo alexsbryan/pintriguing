@@ -15,8 +15,12 @@ Pintriguing.Views.AddBoard = Backbone.View.extend({
     var $formData = $(event.currentTarget).serializeJSON();
     this.boards.create($formData)
 
-      $("a.cancel").last().click()
+    if($('.new-pin-it').length >0){
+      $('.new-board').remove()
+    }else {
+      $("a.cancel").last().click()}
     current_user.boards().fetch()
+
   },
 
   render: function () {

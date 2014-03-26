@@ -1,17 +1,31 @@
-<h2>Sign in</h2>
+<div id="logsign" class='container-fluid'>
+<div class='row'>
+<div class='col-xs-6 col-xs-offset-3 sign'>
+<h2 class='text-center'>Sign in</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, autofocus: true %></div>
+<%= form_for(resource, html: {class:'form-horizontal text-center'}, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class='form-group'><%= f.label :email%><br />
+  <%= f.email_field :email, class: 'col-sm-8 col-xs-offset-2', autofocus: true %></div>
 
-  <div><%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %></div>
+  <div class='form-group'><%= f.label :password %><br />
+    <%= f.password_field :password, class: 'col-sm-8 col-xs-offset-2',  autocomplete: "off" %></div>
 
   <% if devise_mapping.rememberable? -%>
     <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
   <% end -%>
 
-  <div><%= f.submit "Sign in" %></div>
+  <div class="col-sm-offset-2 col-sm-4"><%= f.submit "Sign in", class: 'btn btn-primary submit'  %> </div>
 <% end %>
-
+<div class="col-sm-4 col-sm-offset-1"><%= button_to "GUEST", guest_url, class: 'btn btn-primary submit' %></div>
+<br>
+<br>
+<div class='text-center'>
 <%= render "devise/shared/links" %>
+<br>
+<br>
+</div>
+</div>
+</div>
+</div>
+
+

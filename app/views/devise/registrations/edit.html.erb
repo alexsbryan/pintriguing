@@ -1,29 +1,42 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+
+
+
+<div id="logsign" class='container-fluid'>
+<div class='row'>
+<div class='col-xs-6 col-xs-offset-3 sign'>
+<h2 class='text-center'>Edit</h2>
+<%= link_to "Go to home page", root_url %>
+
+<%= form_for(resource, html: {class:'form-horizontal text-center', method: :put}, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, autofocus: true %></div>
+  <div class='form-group'><%= f.label :first_name %><br />
+  <%= f.text_field :first_name, class: 'col-sm-8 col-xs-offset-2', autofocus: true %></div>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
+  <div class='form-group'><%= f.label :last_name %><br />
+  <%= f.text_field :last_name, class: 'col-sm-8 col-xs-offset-2' %></div>
 
-  <div><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %></div>
+  <div class='form-group'><%= f.label :email %><br />
+  <%= f.email_field :email, class: 'col-sm-8 col-xs-offset-2' %></div>
 
-  <div><%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+  <div class='form-group'><%= f.label :password %><br />
+    <%= f.password_field :password, class: 'col-sm-8 col-xs-offset-2', autocomplete: "off" %></div>
 
-  <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %></div>
+  <div class='form-group'><%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, class: 'col-sm-8 col-xs-offset-2', autocomplete: "off" %></div>
 
-  <div><%= f.submit "Update" %></div>
+ <div class="col-sm-offset-4 col-sm-4"><%= f.submit "Update", class: 'btn btn-primary submit'  %> </div>
 <% end %>
+<br>
+<br>
 
-<h3>Cancel my account</h3>
+<div class="col-sm-offset-4 col-sm-4 text-center"><%= render "devise/shared/links" %></div>
+<br>
+<br>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+</div>
+</div>
+</div>
+</div>
 
-<%= link_to "Back", :back %>

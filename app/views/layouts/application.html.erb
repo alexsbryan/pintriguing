@@ -18,6 +18,7 @@
                 <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dLabel">
                   <li><a href="<%= '/#users/' + current_user.id.to_s %>">Your Profile & Boards</a></li>
                   <li> <%= link_to "Logout", destroy_user_session_path, method: :delete  %> </li>
+                  <li> <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> </li>
 
                 </ul>
               </li>
