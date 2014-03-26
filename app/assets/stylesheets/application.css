@@ -14,8 +14,12 @@
  *= require_tree .
  */
 
+@import url(http://fonts.googleapis.com/css?family=Lobster+Two);
+@import url(http://fonts.googleapis.com/css?family=Cardo:700|Raleway:500);
+
 body {
-    padding-top: 65px;
+    padding-top: 40px;
+    background: url('crossword.png');
 }
 
  .scrollable-menu {
@@ -26,11 +30,41 @@ body {
 
 .navbar-brand img {
   height: 100%;
+
 }
+
+.btn.submit {
+  background-color: #e63d45;
+  color: #FFF;
+}
+
+.btn.create {
+  background-image: linear-gradient(#e63d45, #c11a22);
+}
+
+.btn.submit:hover {
+  background-color: #c11a22;
+  color: #FFF;
+}
+
+
 .navbar-brand {
   width: 125px;
 }
+/*
+body .navbar-default .navbar-nav > li > a {
+color: #FFF;
+}
+*/
+body .navbar-default .navbar-nav > li > a:hover {
+color: #e63d45;
+}
 
+body .navbar{
+  background-color: #FFF;
+  margin-bottom: 0;
+  box-shadow: -2px 1px 10px #888888;
+}
 #pin-it {
   background-image: linear-gradient(#e63d45, #c11a22);
   box-shadow: 0 1px 1px 0;
@@ -38,6 +72,7 @@ body {
   color: #FFF ;
   font-size: 20px;
   margin-top: 10px;
+  font-family: 'Lobster Two', cursive;
 }
 
 .nav-center {
@@ -45,20 +80,28 @@ body {
     float:none;
 }
 
+.well {
+    display: block;
+
+}
 
 
-a {
+a, h4 {
   width: 100%;
   word-wrap: break-word;
 }
 
 .pin p {
-  width: 100%;
+  width: 98%;
   word-wrap: break-word;
 }
 
 .btn.span {
   width:100%;
+}
+
+.container-fluid {
+font-family: 'Raleway', sans-serif;
 }
 
 

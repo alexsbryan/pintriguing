@@ -62,20 +62,16 @@ Pintriguing.Views.HomeView = Backbone.View.extend({
   },
 
   showPin: function (event) {
-
     var that = this
     var pobId = $(event.currentTarget).parent().parent().attr('data-pobid');
-
     var pob = pins.get(parseInt(pobId))
 
     var pinShowView = new Pintriguing.Views.PinShow({
       model: pob
     })
-
     var modal = new Backbone.BootstrapModal({
       content: pinShowView
     }).open();
-
   },
 
 

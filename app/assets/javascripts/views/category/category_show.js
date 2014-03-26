@@ -8,7 +8,21 @@ Pintriguing.Views.CategoryShow = Backbone.View.extend({
   template: JST['categories/show'],
 
   events: {
-    "click #pin-it": "pin"
+    "click #pin-it": "pin",
+    "click .pin img": "showPin"
+  },
+
+  showPin: function (event) {
+    var that = this
+    var pobId = $(event.currentTarget).parent().parent().attr('data-pobid');
+    var pob = pins.get(parseInt(pobId))
+
+    var pinShowView = new Pintriguing.Views.PinShow({
+      model: pob
+    })
+    var modal = new Backbone.BootstrapModal({
+      content: pinShowView
+    }).open();
   },
 
   pin: function (event) {

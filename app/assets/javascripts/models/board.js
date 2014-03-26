@@ -14,6 +14,7 @@ Pintriguing.Models.Board = Backbone.Model.extend({
     if(jsonResp.pins_on_boards) {
       this.pins_on_boards().set(jsonResp.pins_on_boards);
       delete jsonResp.pins_on_boards;
+      return jsonResp
     }
 
     if(jsonResp.board) {
@@ -21,8 +22,9 @@ Pintriguing.Models.Board = Backbone.Model.extend({
       this.page = parseInt(jsonResp.page);
       this.total_pages = parseInt(jsonResp.total_pages);
       delete jsonResp.board.pins_on_boards;
+      return jsonResp.board
     }
-    return jsonResp;
+
   }
 
 });

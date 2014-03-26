@@ -48,6 +48,7 @@ a {
 a:active,
 a:hover {
   outline: 0;
+  color: #e63d45;
 }
 abbr[title] {
   border-bottom: 1px dotted;
@@ -288,12 +289,12 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #428bca;
+  color: #333;
   text-decoration: none;
 }
 a:hover,
 a:focus {
-  color: #2a6496;
+  color: #e63d45;
   text-decoration: underline;
 }
 a:focus {

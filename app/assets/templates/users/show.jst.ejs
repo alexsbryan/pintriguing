@@ -1,36 +1,45 @@
+<div class='row'>
+  <div class='col-xs-10'>
+    <h1><%= user.escape('first_name') + ' ' + user.escape('last_name')  %>'s Boards</h1>
+  </div>
+  <div class='col-xs-2'>
+    <h1><button id='addBoard' class='btn btn-primary btn-lg create'>Add Board</button></h1>
+  </div>
+</div>
 
-<h1><%= user.escape('first_name') + ' ' + user.escape('last_name')  %>'s Boards</h1>
-<button id='addBoard' class='btn btn-primary'>Add Board</button>
-
-  <div id="main" role="main">
+<div id="main" class='col-xs-12' role="main">
   <ul id='tiles'>
-<% boards.each(function(board){ %>
-  <% if(board.pins_on_boards().length >0 ) { %>
-  <% var pob = board.pins_on_boards().first() %>
 
-      <% height = 200%>
-      <li><a href="<%= pob.escape('url') %>"><img src="<%= pob.escape('img_url') %>" alt="Add a Pin" width="100%" height="<%= height %>"></a><a href='<%= '#users/' + pob.escape('owner_id') + '/boards/' + pob.escape('board_id') %>'><%= board.escape('name') %></a></li>
+    <% boards.each(function(board){ %>
+      <% if(board.pins_on_boards().length >0 ) { %>
+        <% var pob = board.pins_on_boards().first() %>
 
-
-<% }}) %>
-
-   </ul>
-   </div>
+        <% height = 200%>
+        <li class='text-center'>
+          <img src="<%= pob.escape('img_url') %>" alt="Add a Pin" width="100%" height="<%= height %>">
+          <a href='<%= '#users/' + pob.escape('owner_id') + '/boards/' + pob.escape('board_id') %>'><%= board.escape('name') %></a>
+        </li>
 
 
+        <% }}) %>
 
-  <script>
-  $(function() {
-    // Call the layout function.
-    $('#tiles li').wookmark({
-      // Prepare layout options.
-      align: 'center',
-      // Prepare layout options.
-      autoResize: true, // This will auto-update the layout when the browser window is resized.
-      container: $('#main'), // Optional, used for some extra CSS styling
-      offset: 5, // Optional, the distance between grid items
-      outerOffset: 10, // Optional, the distance to the containers border
-      itemWidth: 310 // Optional, the width of a grid item
+      </ul>
+    </div>
+
+
+
+    <script>
+    $(function() {
+      // Call the layout function.
+      $('#tiles li').wookmark({
+        // Prepare layout options.
+        align: 'center',
+        // Prepare layout options.
+        autoResize: true, // This will auto-update the layout when the browser window is resized.
+        container: $('#main'), // Optional, used for some extra CSS styling
+        offset: 5, // Optional, the distance between grid items
+        outerOffset: 10, // Optional, the distance to the containers border
+        itemWidth: 310 // Optional, the width of a grid item
+      });
     });
-  });
-  </script>
+    </script>

@@ -1,35 +1,35 @@
-<h1>Check these Pins</h1>
+<h1 class='text-center'>Check these Pins</h1>
 
 
 <div id="main" role="main">
 
-<div class="ressource">
-  <ul id='tiles'>
-           <%pins_on_boards.each(function(pob) {%>
+  <div class="ressource">
+    <ul id='tiles'>
+      <%pins_on_boards.each(function(pob) {%>
 
-          <div class="pin" data-pinid="<%= pob.escape('pin_id') %>" data-pobid="<%= pob.escape('id') %>">
-            <% var height = 200 + Math.random()*200 %>
-            <li>
+        <div class="pin text-center" data-pinid="<%= pob.escape('pin_id') %>" data-pobid="<%= pob.escape('id') %>">
+          <% var height = 200 + Math.random()*200 %>
+          <li>
 
-              <img src="<%= pob.escape('img_url')  %>" width="100%"        height="<%= height %>">
+            <img src="<%= pob.escape('img_url')  %>" width="100%"        height="<%= height %>">
 
-              <div class='pin-it-bar'>
-              <button type="button" data-pinid="<%= pob.escape('pin_id') %>" id='pin-it' class='btn btn-default span'>Pin it</button>
-              </div>
-              <p><%= pob.escape('description') %></p>
-              <br>
+            <div class='pin-it-bar'>
+              <button type="button" data-pinid="<%= pob.escape('pin_id') %>" id='pin-it' class='btn btn-primary span'>Pin it</button>
+            </div>
+            <h4><%= pob.escape('description') %></h4>
             <a href="<%= '#users/' + pob.escape('owner_id') + '/boards/' + pob.escape('board_id') %>">FROM: <%= pob.escape('board_name') %></a>
 
           </li>
           <br>
-          </div>
-          <%  }); %>
-  </ul>
-</div>
+        </div>
+        <%  }); %>
+      </ul>
+    </div>
 
-</div>
+  </div>
 
-<div id="modal"></div>
+  <div id="modal"></div>
+
 
 
   <script>
