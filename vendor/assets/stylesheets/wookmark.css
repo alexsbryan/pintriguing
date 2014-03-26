@@ -22,15 +22,15 @@
  */
 #tiles li {
   width: 300px;
-  box-shadow: 1px 1px 10px #888888;
+  box-shadow: 1px 1px 10px 2px #888888;
   background-color: #ffffff;
   border: 1px solid #dedede;
-          border-radius: 2px;
-     -moz-border-radius: 2px;
-  -webkit-border-radius: 2px;
+          border-radius: 6px;
+     -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
   display: none; /** Hide items initially to avoid a flicker effect **/
   cursor: pointer;
-  padding: 4px;
+  padding: .5px;
 }
 
 #tiles li.inactive {

@@ -1,36 +1,28 @@
-<h1 class='text-center'>Create Board</h1>
-<br>
+<div class='container-fluid'>
+<h1 class='text-center'>Add Board</h1>
+       <form class='new-board form-horizontal'>
+         <label>Name
+             <input type='text' name="board[name]" >
+         </label>
+
+         <label>Description
+             <input type='text' name="board[description]">
+         </label>
+
+         <label>Board
+           <select name='category[id]'>
+             <option>
+             <% categories.each(function(category) { %>
+             <option value='<%= category.escape('id') %>'>
+               <%= category.escape('title') %>
+               </option>
+             <% }) %>
+           </select>
+         </label>
+
+         <input type="submit" class='btn btn-default' value="Create Board">
+       </form>
+</div>
 
 
-<form class="form-horizontal" role="form">
-  <div class="form-group">
-    <label for="name" class="col-sm-2 control-label">Name</label>
-    <div class="col-sm-10">
-      <input type="text" name="board[name]" class="form-control" id="name" placeholder="Name">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="description" class="col-sm-2 control-label">Description</label>
-    <div class="col-sm-10">
-      <textarea class="form-control" name='board[description]' rows="3" placeholder='Description'></textarea>
-    </div>
-  </div>
-  <div class="form-group">
-    <label for='board' class='col-sm-2 control-label'>Board</label>
-    <div class='col-sm-10'>
-      <select class='form-control' name='category[id]'>
-        <option> </option>
-        <% categories.each(function(category) { %>
-          <option value='<%= category.escape('id') %>'>
-            <%= category.escape('title') %>
-          </option>
-          <% }) %>
-        </select>
-      </div>
-    </div>
-    <div class="form-group">
-      <div class="col-sm-offset-5 col-sm-10">
-        <button type="submit" class="btn btn-default submit">Add board</button>
-      </div>
-    </div>
-  </form>
+

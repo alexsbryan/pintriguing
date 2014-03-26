@@ -30,7 +30,7 @@ Pintriguing.Views.PinPicSelect = Backbone.View.extend({
     this.model.set({img_url: img});
 
 
-         var newPOBView = new Pintriguing.Views.NewPinOnBoard({
+         var newPOBView = new Pintriguing.Views.NewPin({
            boardNames: that.boardNames,
            model: this.model
          });

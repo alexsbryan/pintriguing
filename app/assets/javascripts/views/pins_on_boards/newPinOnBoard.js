@@ -1,39 +1,29 @@
 Pintriguing.Views.NewPinOnBoard = Backbone.View.extend({
 
   initialize: function (options) {
-
-    this.boardNames = options.boardNames;
-    this.pin = options.pin;
+    this.boardNames = options.boardNames,
+    this.pin = options.pin,
+    this.modal = options.modal
   },
 
-  template: JST['pins_on_boards/newPin'],
+  template: JST['pins_on_boards/newPinOnBoard'],
 
   events: {
     "submit .new-pin-it": "submit"
   },
 
   submit: function (event) {
-    event.preventDefault()
-    var $formData = $(event.currentTarget).serializeJSON()
-    this.model.set({title: $formData['pin_on_board']['title'], board_id: parseInt($formData['pin_on_board']['board_id'])})
-    debugger
-    this.model.save()
+    event.preventDefault();
+    var $formData = $(event.currentTarget).serializeJSON();
+    pins.create($formData)
 
-    debugger
-
-    //pins.create($formData)
-
-
-
-     $("a.cancel").last().click()
-
-
+     $("a.close")[0].click()
   },
 
   render: function () {
     var renderedContent = this.template({
-      boards: current_user.boards(),
-      pin: this.model
+      boards: this.boardNames,
+      pin: this.pin
     })
     this.$el.html(renderedContent)
     return this

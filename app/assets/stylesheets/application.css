@@ -22,6 +22,10 @@ body {
     background: url('crossword.png');
 }
 
+body .container-fluid {
+
+}
+
  .scrollable-menu {
     max-height: 200px;
     overflow-y: auto;
