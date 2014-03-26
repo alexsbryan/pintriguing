@@ -34,9 +34,7 @@ Pintriguing.Views.HomeView = Backbone.View.extend({
 
 
     var modal = new Backbone.BootstrapModal({
-      content: newPOBView,
-      title: "Pin it!",
-      modal: this
+      content: newPOBView
     }).open();
 
     //this is actually last step after you've selected all the images

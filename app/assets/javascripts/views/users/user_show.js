@@ -2,8 +2,12 @@ Pintriguing.Views.UserShow = Backbone.View.extend({
 
   template: JST['users/show'],
 
+  initialize: function () {
+    this.listenTo(this.model.boards(), 'add sync', this.render);
+  },
+
   events: {
-    "click #addBoard": "addBoard",
+    "click #addBoard": "addBoard"
   },
 
   render: function () {

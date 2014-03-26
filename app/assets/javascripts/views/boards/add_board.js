@@ -11,12 +11,11 @@ Pintriguing.Views.AddBoard = Backbone.View.extend({
   },
 
   submit: function (event) {
-    //event.preventDefault();
+    event.preventDefault();
     var $formData = $(event.currentTarget).serializeJSON();
-    debugger
     this.boards.create($formData)
 
-     $("a.close")[0].click()
+      $("a.cancel").last().click()
   },
 
   render: function () {

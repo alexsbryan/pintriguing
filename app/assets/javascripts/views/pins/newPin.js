@@ -15,11 +15,8 @@ Pintriguing.Views.NewPin = Backbone.View.extend({
   submit: function (event) {
     event.preventDefault()
     var $formData = $(event.currentTarget).serializeJSON()
-    debugger
     this.model.set({title: $formData['pin_on_board']['title'], board_id: parseInt($formData['pin_on_board']['board_id'])})
     this.model.save()
-
-    debugger
 
     //pins.create($formData)
 
