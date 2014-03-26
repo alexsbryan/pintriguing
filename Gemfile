@@ -57,6 +57,8 @@ gem 'ejs'
 # Use ActiveModel has_secure_password
 gem 'bcrypt'
 
+gem 'rails_12factor', group: :production
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
@@ -65,3 +67,5 @@ gem 'bcrypt'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+ruby "1.9.3"
