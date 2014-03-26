@@ -18,7 +18,7 @@ class Api::PinsOnBoardsController < ApplicationController
       if board.owner.id == current_user.id
         @pin_on_board = BoardAssignment.new(pin_on_board_params)
         if @pin_on_board.save
-          render :json => @pin_on_board
+          render "show"
         else
           render :json => @pin_on_board.errors.full_messages, :status => 422
         end
