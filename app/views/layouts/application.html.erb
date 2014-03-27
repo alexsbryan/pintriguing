@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Pintriguing</title>
+  <%= favicon_link_tag 'favicon.ico' %>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
@@ -37,7 +38,7 @@
 <% if alert %>
   <p class="alert alert-error"><%= alert %></p>
 <% end %>
-<div class='container-fluid'>
+<div class='container-fluid well'>
   <% if user_signed_in? %>
     <%= render :partial => 'pins/addPinModal' %>
   <% end %>

@@ -26,10 +26,9 @@ Pintriguing.Views.PickWebPhoto = Backbone.View.extend({
         var pin = new Pintriguing.Models.Pin({ url: attrs.url, pin_id: parseInt(this.model)})
 
         // embedly api call for images
-        $.embedly.defaults.key = "04c61e496d6f4659a1a6225c29e745d8";
+        $.embedly.defaults.key = "fee1c62bff7c4eebb29955bad02ce071";
         $.embedly.extract(attrs.url).progress(function(data) {
-          // $("#modal").modal("hide");
- //          $(".modal-backdrop").remove();
+
           var images = data.images;
 
           // render view with images for selection

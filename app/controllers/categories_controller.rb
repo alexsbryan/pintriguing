@@ -3,7 +3,7 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.find(params[:id])
-    @pins_on_boards = @category.pins_on_boards.includes([{:board => :owner}, :pin]).page(params[:page])
+    @pins_on_boards = @category.pins_on_boards.order("RANDOM()").includes([{:board => :owner}, :pin]).page(params[:page])
   end
 
 end

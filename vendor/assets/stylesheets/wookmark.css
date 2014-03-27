@@ -22,7 +22,7 @@
  */
 #tiles li {
   width: 250px;
-  box-shadow: 1px 1px 10px 2px #888888;
+  box-shadow: 1px 1px 4px 1px #888888;
   background-color: #ffffff;
   border: 1px solid #dedede;
           border-radius: 6px;
