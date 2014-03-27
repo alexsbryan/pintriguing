@@ -37,15 +37,17 @@ Pintriguing.Views.NewPinOnBoard = Backbone.View.extend({
 
   render: function () {
 
-    if($("a.cancel").length>0){
-      $("a.cancel").first().click()
-    }
 
     var renderedContent = this.template({
       boards: current_user.boards(),
       pin: this.pin
     })
     this.$el.html(renderedContent)
+
+    if($("a.cancel").length>0){
+      $("a.cancel").last().click()
+    }
+
     return this
   }
 
