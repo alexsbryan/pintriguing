@@ -5,7 +5,8 @@ Pintriguing.Views.PinShow = Backbone.View.extend({
   },
 
   events: {
-    "click": "closeModal"
+    "click img": "closeModal",
+     "click #pin-it": "pin"
   },
 
   template: JST['pins_on_boards/showPin'],
@@ -21,6 +22,20 @@ Pintriguing.Views.PinShow = Backbone.View.extend({
 
   closeModal: function () {
     $("a.cancel").last().click()
+  },
+
+  pin: function (event) {
+    var pin = $(event.currentTarget).attr('data-pinid');
+    var newPOBView = new Pintriguing.Views.NewPinOnBoard({
+      boardNames: current_user.boards(),
+      pin: pin
+    });
+
+
+    var modal = new Backbone.BootstrapModal({
+      content: newPOBView
+    }).open();
+
   }
 
 });

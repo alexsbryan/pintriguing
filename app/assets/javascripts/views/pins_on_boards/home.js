@@ -38,26 +38,6 @@ Pintriguing.Views.HomeView = Backbone.View.extend({
       content: newPOBView
     }).open();
 
-    //this is actually last step after you've selected all the images
-
-
-    // var pin = $(event.currentTarget).attr('data-pinid');
-//     var newPOBView = new Pintriguing.Views.NewPinOnBoard({
-//       boardNames: this.boardNames,
-//       pin: pin
-//     });
-//
-//     var modal = new Backbone.BootstrapModal({
-//       content: newPOBView,
-//     }).open();
-
-
-
-
-    //Demo of how to get modal to work
-    // var addBoardView = new Pintriguing.Views.AddBoard();
- //    var modal = new Backbone.BootstrapModal({ content: addBoardView}).open();
-
   },
 
   showPin: function (event) {
