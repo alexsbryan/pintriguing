@@ -30,7 +30,14 @@ Pintriguing.Views.NewPinOnBoard = Backbone.View.extend({
   submit: function (event) {
     event.preventDefault();
     var $formData = $(event.currentTarget).serializeJSON();
-    pins.create($formData)
+    pins.create($formData, {
+      success: function (pob) {
+        var routeString = "users/" + current_user.escape('id') + "/boards/" + pob.escape('board_id')
+        app.navigate(routeString ,{trigger:true})
+        debugger
+      }
+    })
+
     $("a.cancel").last().click()
       $.each($("a.cancel"), function(idx, val){
          $($("a.cancel")[idx]).click()
