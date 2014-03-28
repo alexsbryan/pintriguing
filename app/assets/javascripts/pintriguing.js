@@ -33,7 +33,7 @@ window.Pintriguing = {
       $("#header").html(header.render().$el);
 
 
-        new Pintriguing.Routers.AppRouter({
+        app = new Pintriguing.Routers.AppRouter({
           $rootEl: $rootEl,
           collection: pins,
           current_user: current_user

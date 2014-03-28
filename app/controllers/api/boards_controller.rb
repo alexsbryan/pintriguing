@@ -11,6 +11,7 @@ class Api::BoardsController < ApplicationController
 #     @board = Board.find(params[:id])
     # @boards = Board.all.where(:owner_id => current_user.id)
     params[:page] ||= 1
+    @board = Board.find(params[:id])
     @pins_on_board = BoardAssignment.where(:board_id => params[:id]).includes([{:board => :owner}, :pin]).page(params[:page])
     render "show"
   end
