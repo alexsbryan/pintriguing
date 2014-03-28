@@ -4,7 +4,7 @@ Pintriguing.Views.NewPinOnBoard = Backbone.View.extend({
     this.boardNames = options.boardNames;
     this.pin = options.pin;
     this.modal = options.modal;
-    this.listenTo(current_user.boards(),"add", this.render)
+    this.listenTo(current_user.boards(),"add sync", this.render)
   },
 
   template: JST['pins_on_boards/newPinOnBoard'],
@@ -31,22 +31,20 @@ Pintriguing.Views.NewPinOnBoard = Backbone.View.extend({
     event.preventDefault();
     var $formData = $(event.currentTarget).serializeJSON();
     pins.create($formData)
-
-     $("a.cancel").last().click()
+    $("a.cancel").last().click()
+      $.each($("a.cancel"), function(idx, val){
+         $($("a.cancel")[idx]).click()
+      })
   },
 
   render: function () {
-
 
     var renderedContent = this.template({
       boards: current_user.boards(),
       pin: this.pin
     })
-    this.$el.html(renderedContent)
 
-    if($("a.cancel").length>0){
-      $("a.cancel").last().click()
-    }
+    this.$el.html(renderedContent)
 
     return this
   }

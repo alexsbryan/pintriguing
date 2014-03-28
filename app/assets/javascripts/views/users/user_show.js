@@ -3,7 +3,8 @@ Pintriguing.Views.UserShow = Backbone.View.extend({
   template: JST['users/show'],
 
   initialize: function () {
-    this.listenTo(this.model.boards(), 'add sync', this.render);
+    this.listenTo(this.model.boards(), 'sync', this.render);
+     this.listenTo(this.model, 'add sync', this.render);
   },
 
   events: {
@@ -11,6 +12,7 @@ Pintriguing.Views.UserShow = Backbone.View.extend({
   },
 
   render: function () {
+
     var renderedContent = this.template({
       boards: this.model.boards(),
       user: this.model

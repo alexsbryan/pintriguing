@@ -9,8 +9,8 @@
 
 <div id="main" class='col-xs-12' role="main">
   <ul id='tiles'>
-
     <% boards.each(function(board){ %>
+
       <% if(board.pins_on_boards().length >0 ) { %>
         <% var pob = board.pins_on_boards().first() %>
 
@@ -21,6 +21,11 @@
         </li>
 
 
+        <% } else if( board.escape('name') != "*"){ %>
+          <li class='text-center'>
+          <img alt="Click Plus Button to Add Pins!" width="100%" height="200">
+          <p><%= board.escape('name') %></p>
+          </li>
         <% }}) %>
 
       </ul>

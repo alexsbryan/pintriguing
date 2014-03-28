@@ -23,6 +23,7 @@ Pintriguing.Views.HomeView = Backbone.View.extend({
 
     this.$el.html(renderedContent)
     window.scrollTo(0,scrollTop)
+
     return this
   },
 

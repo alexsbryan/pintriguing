@@ -51,6 +51,7 @@ gem 'devise'
 
 gem 'kaminari'
 
+gem 'thin'
 
 gem 'backbone-on-rails'
 gem 'ejs'

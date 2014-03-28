@@ -101,6 +101,7 @@ Pintriguing.Routers.AppRouter = Backbone.Router.extend({
     }
     this.currentView = view
     this.$rootEl.html(view.render().$el)
+
   }
 
 });

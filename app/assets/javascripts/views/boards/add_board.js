@@ -18,7 +18,10 @@ Pintriguing.Views.AddBoard = Backbone.View.extend({
     if($('.new-pin-it').length >0){
       $('.new-board').remove()
     }else {
-      $("a.cancel").last().click()}
+      $("a.cancel").last().click()
+    }
+     // var routeString = "users/" + current_user.escape('id') + "/boards/" + b.escape('id')
+
     current_user.boards().fetch()
 
   },
