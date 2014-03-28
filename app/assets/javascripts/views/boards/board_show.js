@@ -1,7 +1,7 @@
 Pintriguing.Views.BoardShow = Backbone.View.extend({
 
   initialize: function () {
-    this.listenTo(this.model.pins_on_boards(), "sync add", this.render);
+    this.listenTo(this.model, "sync add", this.render);
     this.listenToScrolls();
   },
 

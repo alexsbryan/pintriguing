@@ -74,8 +74,8 @@ end
 
 200.times do |t|
   num = 400 + t
-  pin = Pin.create(id: (t), title: "Cool Pin #{t}", url: 'http://www.google.com', img_url:"http://lorempixel.com/350/#{num.to_s}")
-  BoardAssignment.create(board_id: (1..categories.length).to_a.sample, pin_id: t, description: loremArr.sample)
+  pin = Pin.create(title: "Cool Pin #{t}", url: 'http://www.google.com', img_url:"http://lorempixel.com/350/#{num.to_s}")
+  BoardAssignment.create(board_id: (1..categories.length).to_a.sample, pin_id: pin.id, description: loremArr.sample)
 
 end
 

@@ -8,9 +8,11 @@ class Api::PinsController < ApplicationController
 
  def create
    @board = Board.find(params[:board_id])
-   @pin = @board.pins.create(pin_params)
-
+   @pin = @board.pins.build(pin_params)
+   #@board.board_assignments.last().description = (params[:description])
    if @board.save
+     #Sorry for the hack, probably could use an inverse of or something
+     @pin.board_assignments.first().update_attributes(description: params[:description])
      render :json => @pin
    else
      render :json => @pin.errors.full_messages, :status => 422

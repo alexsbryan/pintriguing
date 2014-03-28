@@ -23,7 +23,8 @@ Pintriguing.Views.PickWebPhoto = Backbone.View.extend({
 
         var that = this;
         var attrs = $(event.currentTarget).serializeJSON()
-        var pin = new Pintriguing.Models.Pin({ url: attrs.url, pin_id: parseInt(this.model)})
+        ///NAN error
+        var pin = new Pintriguing.Models.Pin({ url: attrs.url})
 
         // embedly api call for images
         $.embedly.defaults.key = "fee1c62bff7c4eebb29955bad02ce071";

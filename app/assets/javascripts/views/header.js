@@ -12,6 +12,7 @@ Pintriguing.Views.Header = Backbone.View.extend({
 
   addPin: function (event) {
     var pin = $(event.currentTarget).attr('data-pinid');
+    debugger
     var pickPhotoView = new Pintriguing.Views.PickWebPhoto({
       boardNames: this.boardNames,
       model: pin
