@@ -34,7 +34,7 @@ Pintriguing.Views.NewPinOnBoard = Backbone.View.extend({
       success: function (pob) {
         var routeString = "users/" + current_user.escape('id') + "/boards/" + pob.escape('board_id')
         app.navigate(routeString ,{trigger:true})
-        debugger
+
       }
     })
 
