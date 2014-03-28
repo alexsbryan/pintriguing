@@ -18,7 +18,7 @@ Pintriguing.Views.BoardShow = Backbone.View.extend({
   showPin: function (event) {
     var that = this
     var pobId = $(event.currentTarget).parent().parent().attr('data-pobid');
-    var pob = pins.get(parseInt(pobId))
+    var pob = this.model.pins_on_boards().get(parseInt(pobId))
 
     var pinShowView = new Pintriguing.Views.PinShow({
       model: pob
