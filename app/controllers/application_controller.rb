@@ -8,6 +8,12 @@ class ApplicationController < ActionController::Base
 
   before_action :authenticate_user!
 
+  before_filter :configure_permitted_parameters, if: :devise_controller?
+
+    def configure_permitted_parameters
+     devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:first_name, :last_name, :email, :password, :password_confirmation) }
+    end
+
 
   # if user is logged in, return current_user, else return guest_user
     def current_or_guest_user

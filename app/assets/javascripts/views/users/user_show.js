@@ -5,6 +5,7 @@ Pintriguing.Views.UserShow = Backbone.View.extend({
   initialize: function () {
     this.listenTo(this.model.boards(), 'sync', this.render);
      this.listenTo(this.model, 'add sync', this.render);
+		 this.listenTo(current_user.boards(),"add sync", this.render)
   },
 
   events: {

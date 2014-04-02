@@ -3,6 +3,7 @@ Pintriguing.Views.CategoryShow = Backbone.View.extend({
   initialize: function () {
     this.listenTo(this.model.pins_on_boards(), "sync add", this.render);
     this.listenToScrolls();
+		this.listenTo(current_user.boards(),"add sync", this.render)
   },
 
   template: JST['categories/show'],

@@ -4,13 +4,26 @@ Pintriguing.Views.NewPin = Backbone.View.extend({
 
     this.boardNames = options.boardNames;
     this.pin = options.pin;
+		this.listenTo(current_user.boards(),"add sync", this.render)
   },
 
   template: JST['pins_on_boards/newPin'],
 
   events: {
-    "submit .new-pin-it": "submit"
+    "submit .new-pin-it": "submit",
+		"click #addBoard": "addBoard"
   },
+
+   addBoard: function (event) {
+     var cuser = $('#content').attr('data-cuser-id');
+     var newBoardView = new Pintriguing.Views.AddBoard({
+       user: cuser,
+       boards: current_user.boards()
+     });
+
+     this.$el.append(newBoardView.render().$el)
+
+ },
 
   submit: function (event) {
     event.preventDefault()

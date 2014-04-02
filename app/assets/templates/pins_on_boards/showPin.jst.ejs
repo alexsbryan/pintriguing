@@ -1,5 +1,5 @@
 
-<a class='pin-link' href="<%= pob.escape('url') %>"><img class='img-rounded' width='100%' src="<%= pob.escape('img_url')  %>"></a>
+<a class='pin-link' href="<%= pob.escape('url')%>"  target="_blank"><img class='img-rounded' width='100%' src="<%= pob.escape('img_url')  %>"></a>
   <h3 class='text-center'><%= pob.escape('description') %></h3>
     <button type="button" data-pinid="<%= pob.escape('pin_id') %>" id='pin-it' class='btn span'>Pin it</button>
-    <a class='text-center' href="<%= '#users/' + pob.escape('owner_id') + '/boards/' + pob.escape('board_id') %>"><h4><%= pob.escape('board_name') %></h4></a>
+    <a class='text-center' href="<%= '#users/' + pob.escape('owner_id') + '/boards/' + pob.escape('board_id') %>"><h4>FROM: <%= pob.escape('board_name') %></h4></a>
